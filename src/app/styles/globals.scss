@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -101,4 +103,8 @@ ul {
   html {
     color-scheme: dark;
   }
+}
+
+h1 {
+  font-size: 40px;
 }
