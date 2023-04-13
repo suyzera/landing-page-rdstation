@@ -1,8 +1,21 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  padding: 0 108px;
+}
+
 .styleguide {
   background-color: #19c1ce;
   height: 280px;
   padding: 64px;
   display: flex;
   justify-content: flex-start;
-  align-items: baseline;
+  align-items: flex-end;
+}
+
+.colors {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
