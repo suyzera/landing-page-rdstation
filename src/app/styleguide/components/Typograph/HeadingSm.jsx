@@ -1,6 +1,6 @@
 import { Roboto } from "next/font/google";
 
-const roboto = Roboto({ subsets: ["latin"], weight: "400" });
+const roboto = Roboto({ subsets: ["latin"], weight: "900" });
 
 export const HeadingMd = ({ content }) => {
   return <h3 className={roboto.className}>{content}</h3>;
