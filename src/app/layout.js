@@ -6,10 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head></head>
-      <body className={styles.body}>
-        <Navbar></Navbar>
-        {children}
-      </body>
+      <body className={styles.body}>{children}</body>
     </html>
   );
 }
