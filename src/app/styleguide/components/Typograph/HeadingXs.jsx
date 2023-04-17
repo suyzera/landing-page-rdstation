@@ -1,9 +1,9 @@
-import { Roboto } from "next/font/google";
+import { Darker_Grotesque } from "next/font/google";
 
-const roboto = Roboto({ subsets: ["latin"], weight: "700" });
+const darker = Darker_Grotesque({ subsets: ["latin"], weight: "700" });
 
 export const HeadingXs = ({ content }) => {
-  return <h4 className={roboto.className}>{content}</h4>;
+  return <h5 className={darker.className}>{content}</h5>;
 };
 
 export default HeadingXs;
