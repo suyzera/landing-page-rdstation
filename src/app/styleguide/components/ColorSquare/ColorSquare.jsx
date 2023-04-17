@@ -1,4 +1,5 @@
 import styles from "./ColorSquare.module.scss";
+import BodyLg from "../Typograph/BodyLg";
 
 const ColorSquare = ({ color }) => {
   return (
@@ -7,7 +8,7 @@ const ColorSquare = ({ color }) => {
         className={styles.square}
         style={{ backgroundColor: color.value }}
       ></div>
-      <span>{color.name}</span>
+      <BodyLg content={color.value}></BodyLg>
     </div>
   );
 };

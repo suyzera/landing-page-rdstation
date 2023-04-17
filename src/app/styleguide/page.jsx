@@ -2,14 +2,19 @@ import styles from "./StyleGuide.module.scss";
 import ColorSquare from "./components/ColorSquare/ColorSquare";
 import colors from "./variables/colors";
 import tableInfo from "./tableInfo";
-
 import HeadingLg from "./components/Typograph/HeadingLg";
+import { Darker_Grotesque, Nunito_Sans } from "next/font/google";
+import BodyMd from "./components/Typograph/BodyMd";
+import HeadingXs from "./components/Typograph/HeadingXs";
+
+const nunito = Nunito_Sans({ subsets: ["latin"], weight: "400" });
+const darker = Darker_Grotesque({ subsets: ["latin"], weight: "900" });
 
 const StyleGuide = () => {
   return (
     <div className={styles.grid}>
       <section className={styles.styleguide}>
-        <HeadingLg content="Style Guide"></HeadingLg>
+        <h1 className={darker.className}>Style Guide</h1>
       </section>
 
       <section className={styles.colors}>
@@ -21,29 +26,41 @@ const StyleGuide = () => {
         </div>
       </section>
 
-      <section>
-        <HeadingLg content="Typograph"></HeadingLg>
+      <section className={styles.typograph}>
+        <HeadingLg content="Tipografia"></HeadingLg>
 
-        <div className={styles.typograph}>
+        <div className={styles.fonts}>
           <div className={styles.square}>
-            <h3>Nunito Sams</h3>
-            <h4>Google Fonts</h4>
+            <h3 className={nunito.className}>Nunito Sams</h3>
+            <BodyMd content="Google Fonts"></BodyMd>
           </div>
           <div className={styles.square}>
-            <h3>Darker Grotesque</h3>
-            <h4>Google Fonts</h4>
+            <h3 className={nunito.className}>Darker Grotesque</h3>
+            <BodyMd content="Google Fonts"></BodyMd>
           </div>
         </div>
 
         <table className={styles.table}>
           <thead className={styles.thead}>
             <tr>
-              <th className={styles.th}>Name</th>
-              <th className={styles.th}>Family</th>
-              <th className={styles.th}>Size Desktop</th>
-              <th className={styles.th}>Size Mobile</th>
-              <th className={styles.th}>Line Height</th>
-              <th className={styles.th}>Weight</th>
+              <th className={styles.th}>
+                <HeadingXs content="Name"></HeadingXs>
+              </th>
+              <th className={styles.th}>
+                <HeadingXs content="Family"></HeadingXs>
+              </th>
+              <th className={styles.th}>
+                <HeadingXs content="Size Desktop"></HeadingXs>{" "}
+              </th>
+              <th className={styles.th}>
+                <HeadingXs content="Size Mobile"></HeadingXs>{" "}
+              </th>
+              <th className={styles.th}>
+                <HeadingXs content="Line Height"></HeadingXs>{" "}
+              </th>
+              <th className={styles.th}>
+                <HeadingXs content="Weight"></HeadingXs>
+              </th>
             </tr>
           </thead>
 
@@ -51,12 +68,24 @@ const StyleGuide = () => {
             {tableInfo.map((item) => {
               return (
                 <tr className={styles.tr} key={item.title}>
-                  <td className={styles.td}>{item.component}</td>
-                  <td className={styles.td}>{item.family}</td>
-                  <td className={styles.td}>{item.desktopSize}</td>
-                  <td className={styles.td}>{item.mobileSize}</td>
-                  <td className={styles.td}>{item.lineHeight}</td>
-                  <td className={styles.td}>{item.weight}</td>
+                  <td className={styles.td}>
+                    <BodyMd content={item.component}></BodyMd>
+                  </td>
+                  <td className={styles.td}>
+                    <BodyMd content={item.family}></BodyMd>
+                  </td>
+                  <td className={styles.td}>
+                    <BodyMd content={item.desktopSize}></BodyMd>
+                  </td>
+                  <td className={styles.td}>
+                    <BodyMd content={item.mobileSize}></BodyMd>
+                  </td>
+                  <td className={styles.td}>
+                    <BodyMd content={item.lineHeight}></BodyMd>
+                  </td>
+                  <td className={styles.td}>
+                    <BodyMd content={item.weight}></BodyMd>
+                  </td>
                 </tr>
               );
             })}
