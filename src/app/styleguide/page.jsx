@@ -1,15 +1,9 @@
 import styles from "./StyleGuide.module.scss";
 import ColorSquare from "./components/ColorSquare/ColorSquare";
 import colors from "./variables/colors";
+import tableInfo from "./tableInfo";
+
 import HeadingLg from "./components/Typograph/HeadingLg";
-import HeadingMd from "./components/Typograph/HeadingMd";
-import HeadingSm from "./components/Typograph/HeadingSm";
-import HeadingXs from "./components/Typograph/HeadingXs";
-import SubtitleSm from "./components/Typograph/SubtitleSm";
-import SubtitleXs from "./components/Typograph/SubtitleXs";
-import BodyLg from "./components/Typograph/BodyLg";
-import BodyMd from "./components/Typograph/BodyMd";
-import BodyXs from "./components/Typograph/BodyXs";
 
 const StyleGuide = () => {
   return (
@@ -54,104 +48,18 @@ const StyleGuide = () => {
           </thead>
 
           <tbody className={styles.tbody}>
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <HeadingLg content="Heading Lg" />
-              </td>
-              <td className={styles.td}>Darker Grotesque</td>
-              <td className={styles.td}>56</td>
-              <td className={styles.td}>40</td>
-              <td className={styles.td}>100% </td>
-              <td className={styles.td}>Black</td>
-            </tr>
-
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <HeadingMd content="Heading Md" />
-              </td>
-              <td className={styles.td}>Darker Grotesque</td>
-              <td className={styles.td}>40</td>
-              <td className={styles.td}>32</td>
-              <td className={styles.td}>100% </td>
-              <td className={styles.td}>Black</td>
-            </tr>
-
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <HeadingSm content="Heading Sm" />
-              </td>
-              <td className={styles.td}>Darker Grotesque</td>
-              <td className={styles.td}>32</td>
-              <td className={styles.td}>24</td>
-              <td className={styles.td}>110% </td>
-              <td className={styles.td}>Black</td>
-            </tr>
-
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <HeadingXs content="Heading Xs" />
-              </td>
-              <td className={styles.td}>Darker Grotesque</td>
-              <td className={styles.td}>24</td>
-              <td className={styles.td}>20</td>
-              <td className={styles.td}>110% </td>
-              <td className={styles.td}>ExtraBold</td>
-            </tr>
-
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <SubtitleSm content="Subtitle Sm" />
-              </td>
-              <td className={styles.td}>Nunito Sans</td>
-              <td className={styles.td}>20</td>
-              <td className={styles.td}>16</td>
-              <td className={styles.td}>140% </td>
-              <td className={styles.td}>Regular</td>
-            </tr>
-
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <SubtitleXs content="Subtitle Xs" />
-              </td>
-              <td className={styles.td}>Nunito Sans</td>
-              <td className={styles.td}>14</td>
-              <td className={styles.td}>14</td>
-              <td className={styles.td}>120% </td>
-              <td className={styles.td}>Regular</td>
-            </tr>
-
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <BodyLg content="Body Lg" />
-              </td>
-              <td className={styles.td}>Nunito Sans</td>
-              <td className={styles.td}>20</td>
-              <td className={styles.td}>20</td>
-              <td className={styles.td}>150% </td>
-              <td className={styles.td}>RegularBold</td>
-            </tr>
-
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <BodyMd content="Body Md" />
-              </td>
-              <td className={styles.td}>Nunito Sans</td>
-              <td className={styles.td}>16</td>
-              <td className={styles.td}>16</td>
-              <td className={styles.td}>150% </td>
-              <td className={styles.td}>RegularBold</td>
-            </tr>
-
-            <tr className={styles.tr}>
-              <td className={styles.td}>
-                <BodyXs content="Body Sm" />
-              </td>
-              <td className={styles.td}>Nunito Sans</td>
-              <td className={styles.td}>14</td>
-              <td className={styles.td}>14</td>
-              <td className={styles.td}>150% </td>
-              <td className={styles.td}>RegularBold</td>
-            </tr>
+            {tableInfo.map((item) => {
+              return (
+                <tr className={styles.tr} key={item.title}>
+                  <td className={styles.td}>{item.component}</td>
+                  <td className={styles.td}>{item.family}</td>
+                  <td className={styles.td}>{item.desktopSize}</td>
+                  <td className={styles.td}>{item.mobileSize}</td>
+                  <td className={styles.td}>{item.lineHeight}</td>
+                  <td className={styles.td}>{item.weight}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </section>
