@@ -1,10 +1,10 @@
-import { Roboto } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 
-const roboto = Roboto({ subsets: ["latin"], weight: "400" });
+const nunito = Nunito_Sans({ subsets: ["latin"], weight: "400" });
 
 export const SubtitleSm = ({ content }) => {
   return (
-    <p className={roboto.className} style={{ paddingBottom: "24px" }}>
+    <p className={nunito.className} style={{ paddingBottom: "24px" }}>
       {content}
     </p>
   );
