@@ -1,11 +1,11 @@
 import styles from "./StyleGuide.module.scss";
-import ColorSquare from "./components/ColorSquare/ColorSquare";
+import ColorSquare from "../components/ColorSquare/ColorSquare";
 import colors from "./variables/colors";
 import tableInfo from "./tableInfo";
-import HeadingLg from "./components/Typograph/HeadingLg";
+import HeadingLg from "../components/Typograph/HeadingLg";
 import { Darker_Grotesque, Nunito_Sans } from "next/font/google";
-import BodyMd from "./components/Typograph/BodyMd";
-import HeadingXs from "./components/Typograph/HeadingXs";
+import BodyMd from "../components/Typograph/BodyMd";
+import HeadingXs from "../components/Typograph/HeadingXs";
 
 const nunito = Nunito_Sans({ subsets: ["latin"], weight: "400" });
 const darker = Darker_Grotesque({ subsets: ["latin"], weight: "900" });

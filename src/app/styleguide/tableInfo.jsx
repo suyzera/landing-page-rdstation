@@ -1,12 +1,12 @@
-import HeadingLg from "./components/Typograph/HeadingLg";
-import HeadingMd from "./components/Typograph/HeadingMd";
-import HeadingSm from "./components/Typograph/HeadingSm";
-import HeadingXs from "./components/Typograph/HeadingXs";
-import SubtitleSm from "./components/Typograph/SubtitleSm";
-import SubtitleXs from "./components/Typograph/SubtitleXs";
-import BodyLg from "./components/Typograph/BodyLg";
-import BodyMd from "./components/Typograph/BodyMd";
-import BodyXs from "./components/Typograph/BodyXs";
+import HeadingLg from "../components/Typograph/HeadingLg";
+import HeadingMd from "../components/Typograph/HeadingMd";
+import HeadingSm from "../components/Typograph/HeadingSm";
+import HeadingXs from "../components/Typograph/HeadingXs";
+import SubtitleSm from "../components/Typograph/SubtitleSm";
+import SubtitleXs from "../components/Typograph/SubtitleXs";
+import BodyLg from "../components/Typograph/BodyLg";
+import BodyMd from "../components/Typograph/BodyMd";
+import BodyXs from "../components/Typograph/BodyXs";
 
 const tableInfo = [
   {
