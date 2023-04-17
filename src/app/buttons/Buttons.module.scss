@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  row-gap: 56px;
+  grid-template-columns: 108px auto 108px;
+  grid-template-rows: auto;
+  padding-bottom: 120px;
+}
+
+.components {
+  grid-column: 1/ 4;
+  background-color: #19c1ce;
+  height: 280px;
+  padding: 64px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.buttons {
+  grid-column: 2/ 3;
+  .buttonContainer {
+    margin-top: 42px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
