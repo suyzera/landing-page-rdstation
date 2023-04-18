@@ -1,6 +1,6 @@
 import styles from "./Buttons.module.scss";
 import HeadingLg from "../components/Typograph/HeadingLg";
-import { Darker_Grotesque, Nunito_Sans } from "next/font/google";
+import { Darker_Grotesque } from "next/font/google";
 import PrimaryButton from "../components/Buttons/Primary";
 import SecondaryButton from "../components/Buttons/Secondary";
 import HighlightButton from "../components/Buttons/Highlight";
