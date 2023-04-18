@@ -38,7 +38,7 @@ const Carousel = () => {
       >
         <div className={styles.carouselItem}>
           <div className={styles.carouselItemContainer}>
-            <Image src={icon} key={icon} />
+            <Image src={icon} key={icon} alt="Operação" />
             <HeadingXs>
               Torne sua operação de Marketing Digital mais produtiva
             </HeadingXs>
@@ -53,7 +53,7 @@ const Carousel = () => {
         </div>
         <div className={styles.carouselItem}>
           <div className={styles.carouselItemContainer}>
-            <Image src={icon} key={icon} />
+            <Image src={icon} key={icon} alt="Operação" />
             <HeadingXs>
               Torne sua operação de Marketing Digital mais produtiva
             </HeadingXs>
@@ -68,7 +68,7 @@ const Carousel = () => {
         </div>
         <div className={styles.carouselItem}>
           <div className={styles.carouselItemContainer}>
-            <Image src={icon} key={icon} />
+            <Image src={icon} key={icon} alt="Operação" />
 
             <HeadingXs>
               Torne sua operação de Marketing Digital mais produtiva
@@ -84,7 +84,7 @@ const Carousel = () => {
         </div>
         <div className={styles.carouselItem}>
           <div className={styles.carouselItemContainer}>
-            <Image src={icon} key={icon} />
+            <Image src={icon} key={icon} alt="Operação" />
             <HeadingXs>
               Torne sua operação de Marketing Digital mais produtiva
             </HeadingXs>
@@ -99,7 +99,7 @@ const Carousel = () => {
         </div>
         <div className={styles.carouselItem}>
           <div className={styles.carouselItemContainer}>
-            <Image src={icon} key={icon} />
+            <Image src={icon} key={icon} alt="Operação" />
             <HeadingXs>
               Torne sua operação de Marketing Digital mais produtiva
             </HeadingXs>
@@ -114,7 +114,7 @@ const Carousel = () => {
         </div>
         <div className={styles.carouselItem}>
           <div className={styles.carouselItemContainer}>
-            <Image src={icon} key={icon} />
+            <Image src={icon} key={icon} alt="Operação" />
             <HeadingXs>
               Torne sua operação de Marketing Digital mais produtiva
             </HeadingXs>

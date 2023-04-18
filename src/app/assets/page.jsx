@@ -21,11 +21,11 @@ const Assets = () => {
         <HeadingLg>Logo</HeadingLg>
         <div className={styles.container}>
           <div className={styles.logo}>
-            <Image src={rdStationLogo} />
+            <Image src={rdStationLogo} alt="RD Station" />
             <SubtitleSm>logo-rd-station-default.svg</SubtitleSm>
           </div>
           <div className={styles.logo}>
-            <Image src={rdStationLogo} />
+            <Image src={rdStationLogo} alt="RD Station" />
             <SubtitleSm>logo-rd-station-default.svg</SubtitleSm>
           </div>
         </div>
@@ -36,17 +36,17 @@ const Assets = () => {
         <div className={styles.iconsContainer}>
           {Icons.map((icon) => (
             <div className={styles.icon}>
-              <Image src={icon} key={icon} />
+              <Image src={icon} key={icon} alt="RD Station" />
             </div>
           ))}
         </div>
         <div className={styles.photosContainer}>
           <div className={styles.photo}>
-            <Image src={imgRdoer} />
+            <Image src={imgRdoer} alt="RD Station" />
             <span>img-results.jpg</span>
           </div>
           <div className={styles.photo}>
-            <Image src={imgVideoThumbnail} />
+            <Image src={imgVideoThumbnail} alt="RD Station" />
             <span>img-video-thumbnail.jpg</span>
           </div>
         </div>
