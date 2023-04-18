@@ -1,5 +1,9 @@
 import styles from "./HamburgerMenu.module.scss";
 import { Nunito_Sans } from "next/font/google";
+import SecondaryButton from "../Buttons/Secondary";
+import PrimaryButton from "../Buttons/Primary";
+import Image from "next/image";
+import arrow from "./../../images/icons/arrow.png";
 
 const nunito = Nunito_Sans({ subsets: ["latin"], weight: "700" });
 
@@ -37,6 +41,13 @@ const HamburgerMenu = () => {
           <a className={nunito.className} href="#">
             Menu 5
           </a>
+        </li>
+
+        <li className={styles.buttonContainer}>
+          <SecondaryButton>Button</SecondaryButton>
+          <PrimaryButton>
+            Button <Image style={{ marginLeft: "5px" }} src={arrow} />
+          </PrimaryButton>
         </li>
       </ul>
     </div>

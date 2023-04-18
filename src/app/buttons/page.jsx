@@ -18,15 +18,15 @@ const Buttons = () => {
         <HeadingLg>Button</HeadingLg>
         <div className={styles.buttonContainer}>
           <div className={styles.button}>
-            <PrimaryButton></PrimaryButton>
+            <PrimaryButton>Primary Button</PrimaryButton>
           </div>
 
           <div className={styles.button}>
-            <SecondaryButton></SecondaryButton>
+            <SecondaryButton>Secondary Button</SecondaryButton>
           </div>
 
           <div className={styles.button}>
-            <HighlightButton></HighlightButton>
+            <HighlightButton>Highlight Button</HighlightButton>
           </div>
         </div>
       </section>
