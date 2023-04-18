@@ -116,11 +116,22 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  .video {
+  .videoContainer {
     margin-top: 16px;
-    width: 330px;
-    height: 185px;
-    border: 1px solid black;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    background-image: url("./images/video-modal.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .playIcon {
+      min-width: 80px;
+      min-height: 80px;
+    }
   }
 }
 

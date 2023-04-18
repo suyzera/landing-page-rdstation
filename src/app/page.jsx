@@ -24,6 +24,7 @@ import twitterIcon from "./images/icons/twitter.svg";
 import instagramIcon from "./images/icons/instagram.svg";
 import youtubeIcon from "./images/icons/youtube.svg";
 import rdStationLogo from "./images/rd-station-cor-md.svg";
+import playIcon from "./images/icons/play.svg";
 import Image from "next/image";
 
 const icons = [
@@ -202,8 +203,11 @@ export default function Home() {
         <HeadingXs>
           Entenda melhor como o RD Station Marketing funciona na prática
         </HeadingXs>
-        <SecondaryButton></SecondaryButton>
-        <div className={styles.video}></div>
+        <SecondaryButton>assista a demonstração</SecondaryButton>
+
+        <div className={styles.videoContainer}>
+          <Image src={playIcon} className={styles.playIcon} />
+        </div>
       </section>
 
       <section className={styles.operation}>
