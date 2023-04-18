@@ -1,20 +1,16 @@
-/* Carousel container */
 .carouselContainer {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 430px;
   overflow: hidden;
   margin-top: 24px;
 }
 
-/* Carousel content (contains all carousel items) */
 .carouselContent {
   display: flex;
   width: 600%;
   transition: transform 0.5s ease-in-out;
 }
-
-/* Individual carousel item */
 
 .carouselItemContainer {
   max-width: 280px;
@@ -38,13 +34,12 @@
   padding: 24px;
 }
 
-/* Circle container */
 .circleContainer {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
-/* Circle (inactive) */
 .circle {
   width: 15px;
   height: 15px;
@@ -55,7 +50,6 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Circle (active) */
 .circle.active {
   background-color: #19c1ce;
   border: none;

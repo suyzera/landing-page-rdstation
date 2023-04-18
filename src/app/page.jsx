@@ -6,6 +6,10 @@ import HeadingMd from "./components/Typograph/HeadingMd";
 import HeadingXs from "./components/Typograph/HeadingXs";
 import HeadingSm from "./components/Typograph/HeadingSm";
 import Carousel from "./components/Carousel/Carousel";
+import SubtitleSm from "./components/Typograph/SubtitleSm";
+import HighlightButton from "./components/Buttons/Highlight";
+import SecondaryButton from "./components/Buttons/Secondary";
+import PrimaryButton from "./components/Buttons/Primary";
 
 export default function Home() {
   return (
@@ -100,6 +104,41 @@ export default function Home() {
         </HeadingSm>
 
         <Carousel></Carousel>
+      </section>
+
+      <section className={styles.accountContainer}>
+        <div className={styles.account}>
+          <HeadingSm color="#FFF">
+            Por que mais de 25.000 empresas escolheram o RD Station?
+          </HeadingSm>
+          <SubtitleSm color="#FFF">
+            Combinamos nossos produtos de Marketing e Vendas com pessoas que se
+            importam com seus resultados e um ecossistema que apoia o seu
+            negócio do planejamento à prática.
+          </SubtitleSm>
+          <HighlightButton></HighlightButton>
+        </div>
+      </section>
+
+      <section className={styles.rdVideo}>
+        <HeadingXs>
+          Entenda melhor como o RD Station Marketing funciona na prática
+        </HeadingXs>
+        <SecondaryButton></SecondaryButton>
+        <div className={styles.video}></div>
+      </section>
+
+      <section className={styles.operation}>
+        <HeadingXs>
+          Torne sua operação de Marketing ainda mais poderosa
+        </HeadingXs>
+        <BodyMd>
+          O RD Station Marketing é um software para sua empresa fazer campanhas
+          melhores, nutrir Leads, gerar oportunidades comerciais qualificadas e
+          alcançar mais resultados.
+        </BodyMd>
+        <div className={styles.icons}></div>
+        <PrimaryButton></PrimaryButton>
       </section>
     </div>
   );
