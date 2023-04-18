@@ -15,7 +15,7 @@ const Buttons = () => {
       </section>
 
       <section className={styles.buttons}>
-        <HeadingLg content="Button"></HeadingLg>
+        <HeadingLg>Button</HeadingLg>
         <div className={styles.buttonContainer}>
           <div className={styles.button}>
             <PrimaryButton></PrimaryButton>

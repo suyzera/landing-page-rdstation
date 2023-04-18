@@ -18,7 +18,7 @@ const StyleGuide = () => {
       </section>
 
       <section className={styles.colors}>
-        <HeadingLg content="Colors"></HeadingLg>
+        <HeadingLg>Colors</HeadingLg>
         <div className={styles.color}>
           {colors.map((color) => (
             <ColorSquare color={color} key={color.value} />
@@ -27,16 +27,16 @@ const StyleGuide = () => {
       </section>
 
       <section className={styles.typograph}>
-        <HeadingLg content="Tipografia"></HeadingLg>
+        <HeadingLg>Tipografia</HeadingLg>
 
         <div className={styles.fonts}>
           <div className={styles.square}>
             <h3 className={nunito.className}>Nunito Sams</h3>
-            <BodyMd content="Google Fonts"></BodyMd>
+            <BodyMd>Google Fonts</BodyMd>
           </div>
           <div className={styles.square}>
             <h3 className={nunito.className}>Darker Grotesque</h3>
-            <BodyMd content="Google Fonts"></BodyMd>
+            <BodyMd>Google Fonts</BodyMd>
           </div>
         </div>
 
@@ -44,22 +44,22 @@ const StyleGuide = () => {
           <thead className={styles.thead}>
             <tr>
               <th className={styles.th}>
-                <HeadingXs content="Name"></HeadingXs>
+                <HeadingXs>Name</HeadingXs>
               </th>
               <th className={styles.th}>
-                <HeadingXs content="Family"></HeadingXs>
+                <HeadingXs>Family</HeadingXs>
               </th>
               <th className={styles.th}>
-                <HeadingXs content="Size Desktop"></HeadingXs>{" "}
+                <HeadingXs>Size Desktop</HeadingXs>{" "}
               </th>
               <th className={styles.th}>
-                <HeadingXs content="Size Mobile"></HeadingXs>{" "}
+                <HeadingXs>Size Mobile</HeadingXs>{" "}
               </th>
               <th className={styles.th}>
-                <HeadingXs content="Line Height"></HeadingXs>{" "}
+                <HeadingXs>Line Height</HeadingXs>{" "}
               </th>
               <th className={styles.th}>
-                <HeadingXs content="Weight"></HeadingXs>
+                <HeadingXs>Weight</HeadingXs>
               </th>
             </tr>
           </thead>
@@ -68,24 +68,12 @@ const StyleGuide = () => {
             {tableInfo.map((item) => {
               return (
                 <tr className={styles.tr} key={item.title}>
-                  <td className={styles.td}>
-                    <BodyMd content={item.component}></BodyMd>
-                  </td>
-                  <td className={styles.td}>
-                    <BodyMd content={item.family}></BodyMd>
-                  </td>
-                  <td className={styles.td}>
-                    <BodyMd content={item.desktopSize}></BodyMd>
-                  </td>
-                  <td className={styles.td}>
-                    <BodyMd content={item.mobileSize}></BodyMd>
-                  </td>
-                  <td className={styles.td}>
-                    <BodyMd content={item.lineHeight}></BodyMd>
-                  </td>
-                  <td className={styles.td}>
-                    <BodyMd content={item.weight}></BodyMd>
-                  </td>
+                  <td className={styles.td}>{item.title}</td>
+                  <td className={styles.td}>{item.family}</td>
+                  <td className={styles.td}>{item.desktopSize}</td>
+                  <td className={styles.td}>{item.mobileSize}</td>
+                  <td className={styles.td}>{item.lineHeight}</td>
+                  <td className={styles.td}>{item.weight}</td>
                 </tr>
               );
             })}

@@ -7,7 +7,12 @@ import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 const Navbar = () => {
   return (
     <nav className={styles.nav}>
-      <Image className={styles.logo} src={rdStationLogo} width="100%" />
+      <Image
+        className={styles.logo}
+        src={rdStationLogo}
+        width="100%"
+        alt="RD Station"
+      />
 
       <HamburgerMenu></HamburgerMenu>
     </nav>

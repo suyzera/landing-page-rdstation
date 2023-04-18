@@ -8,7 +8,7 @@ const ColorSquare = ({ color }) => {
         className={styles.square}
         style={{ backgroundColor: color.value }}
       ></div>
-      <BodyLg content={color.value}></BodyLg>
+      <BodyLg>{color.value}</BodyLg>
     </div>
   );
 };

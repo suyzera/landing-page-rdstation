@@ -18,21 +18,21 @@ const Assets = () => {
       </section>
 
       <section className={styles.logos}>
-        <HeadingLg content="Logo"></HeadingLg>
+        <HeadingLg>Logo</HeadingLg>
         <div className={styles.container}>
           <div className={styles.logo}>
             <Image src={rdStationLogo} />
-            <SubtitleSm content="logo-rd-station-default.svg"></SubtitleSm>
+            <SubtitleSm>logo-rd-station-default.svg</SubtitleSm>
           </div>
           <div className={styles.logo}>
             <Image src={rdStationLogo} />
-            <SubtitleSm content="logo-rd-station-default.svg"></SubtitleSm>
+            <SubtitleSm>logo-rd-station-default.svg</SubtitleSm>
           </div>
         </div>
       </section>
 
       <section className={styles.images}>
-        <HeadingLg content="Logo"></HeadingLg>
+        <HeadingLg>Logo</HeadingLg>
         <div className={styles.iconsContainer}>
           {Icons.map((icon) => (
             <div className={styles.icon}>

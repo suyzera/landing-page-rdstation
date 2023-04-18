@@ -10,7 +10,7 @@ import BodyXs from "../components/Typograph/BodyXs";
 
 const tableInfo = [
   {
-    component: <HeadingLg content="Heading Lg" />,
+    component: <HeadingLg />,
     title: "Heading Lg",
     family: "Darker Grotesque",
     desktopSize: "56",
@@ -19,7 +19,8 @@ const tableInfo = [
     weight: "Black",
   },
   {
-    component: <HeadingMd content="Heading Md" />,
+    component: <HeadingMd />,
+    title: "Heading Md",
     family: "Darker Grotesque",
     desktopSize: "40",
     mobileSize: "32",
@@ -27,7 +28,8 @@ const tableInfo = [
     weight: "Black",
   },
   {
-    component: <HeadingSm content="Heading Sm" />,
+    component: <HeadingSm />,
+    title: "Heading Sm",
     family: "Darker Grotesque",
     desktopSize: "32",
     mobileSize: "24",
@@ -35,7 +37,8 @@ const tableInfo = [
     weight: "Black",
   },
   {
-    component: <HeadingXs content="Heading Xs" />,
+    component: <HeadingXs />,
+    title: "Heading Xs",
     family: "Darker Grotesque",
     desktopSize: "24",
     mobileSize: "20",
@@ -43,15 +46,17 @@ const tableInfo = [
     weight: "Extra Bold",
   },
   {
-    component: <SubtitleSm content="Subtitle Sm" />,
-    family: "Nunito Sans",
+    component: <SubtitleSm />,
+    title: "Subtitle Sm",
+    family: "Nunito ",
     desktopSize: "20",
     mobileSize: "16",
     lineHeight: "140%",
     weight: "Regular",
   },
   {
-    component: <SubtitleXs content="Subtitle Xs" />,
+    component: <SubtitleXs />,
+    title: "Subtitle Xs",
     family: "Nunito Sans",
     desktopSize: "14",
     mobileSize: "14",
@@ -59,7 +64,8 @@ const tableInfo = [
     weight: "Regular",
   },
   {
-    component: <BodyLg content="Body Lg" />,
+    component: <BodyLg />,
+    title: "Body Lg",
     family: "Nunito Sans",
     desktopSize: "20",
     mobileSize: "20",
@@ -67,7 +73,8 @@ const tableInfo = [
     weight: "Regular",
   },
   {
-    component: <BodyMd content="Body Md" />,
+    component: <BodyMd />,
+    title: "Body Md",
     family: "Nunito Sans",
     desktopSize: "16",
     mobileSize: "16",
@@ -75,7 +82,8 @@ const tableInfo = [
     weight: "Regular",
   },
   {
-    component: <BodyXs content="Body Xs" />,
+    component: <BodyXs />,
+    title: "Body Xs",
     family: "Nunito Sans",
     desktopSize: "14",
     mobileSize: "14",
