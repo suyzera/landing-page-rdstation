@@ -4,6 +4,8 @@ import BodyMd from "./components/Typograph/BodyMd";
 import BodyXs from "./components/Typograph/BodyXs";
 import HeadingMd from "./components/Typograph/HeadingMd";
 import HeadingXs from "./components/Typograph/HeadingXs";
+import HeadingSm from "./components/Typograph/HeadingSm";
+import Carousel from "./components/Carousel/Carousel";
 
 export default function Home() {
   return (
@@ -90,6 +92,14 @@ export default function Home() {
         <div className={styles.imageContainer}>
           <div className={styles.triangle}></div>
         </div>
+      </section>
+
+      <section className={styles.tool}>
+        <HeadingSm>
+          A ferramenta de Automação de Marketing líder na América Latina
+        </HeadingSm>
+
+        <Carousel></Carousel>
       </section>
     </div>
   );

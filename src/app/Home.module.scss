@@ -1,6 +1,7 @@
 .grid {
   display: grid;
   row-gap: 24px;
+  background: #f1f3f5;
 }
 
 .main {
@@ -9,13 +10,12 @@
   grid-template: auto / auto;
   gap: 24px;
   margin-top: 16px;
-}
-
-.form {
-  border: 1px solid black;
-  height: 1119px;
-  width: 328px;
-  background-color: white;
+  .form {
+    border: 1px solid black;
+    height: 1119px;
+    width: 328px;
+    background-color: white;
+  }
 }
 
 .rdMarketing {
@@ -54,7 +54,7 @@
     height: 325px;
     .triangle {
       position: absolute;
-      top: 0;
+      top: -1;
       right: 0;
       width: 65px;
       height: 65px;
@@ -64,6 +64,7 @@
       clip-path: polygon(0% 0, 100% 0, 0 100%);
     }
   }
+
   .list {
     margin-top: 16px;
     list-style: none;
@@ -84,4 +85,10 @@
     margin-right: 10px;
     border-radius: 50%;
   }
+}
+
+.tool {
+  padding: 16px;
+  width: 100%;
+  max-width: 348px;
 }
