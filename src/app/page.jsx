@@ -1,5 +1,4 @@
 import styles from "./Home.module.scss";
-
 import Navbar from "./components/Navbar/Navbar";
 import BodyMd from "./components/Typograph/BodyMd";
 import BodyXs from "./components/Typograph/BodyXs";
@@ -87,6 +86,10 @@ export default function Home() {
             </BodyMd>
           </li>
         </ul>
+
+        <div className={styles.imageContainer}>
+          <div className={styles.triangle}></div>
+        </div>
       </section>
     </div>
   );
