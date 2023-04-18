@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar/Navbar";
 import "./styles/globals.scss";
 import styles from "./styles/layout.modules.scss";
 
