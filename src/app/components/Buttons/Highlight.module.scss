@@ -1,0 +1,10 @@
+.highlight {
+  background-color: #f2bf4e;
+  color: #212429;
+  padding: 10px 16px;
+  border: none;
+  box-shadow: 0px 4px 0px -1px rgb(0 0 0);
+  &:hover {
+    background-color: #f4ca6d;
+  }
+}

@@ -1,0 +1,11 @@
+.secondary {
+  background-color: #fff;
+  border: 2px solid #212429;
+  border-radius: 0px;
+  color: #000;
+  padding: 8px 16px;
+  box-shadow: 0px 4px 0px -1px rgb(0 0 0);
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+}
