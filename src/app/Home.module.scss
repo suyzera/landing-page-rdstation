@@ -40,3 +40,31 @@
     }
   }
 }
+
+.results {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list {
+  margin-top: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  margin: 0 0 10px 0;
+  padding: 0 0 0 40px;
+  background: url("./images/icons/checkmark.svg") no-repeat left center;
+}
+
+.check-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 50%;
+}
