@@ -30,6 +30,7 @@ import playIcon from "./images/icons/play.svg";
 import Image from "next/image";
 import { useState } from "react";
 import VideoModal from "./components/VideoModal/VideoModal";
+import Main from "./Home/components/Main/Main";
 
 const icons = [
   {
@@ -108,20 +109,7 @@ export default function Home() {
   return (
     <div className={styles.grid}>
       <Navbar></Navbar>
-
-      <main className={styles.main}>
-        <HeadingMd>
-          Gere mais <span style={{ color: "#19C1CE" }}>oportunidades</span> para
-          seu negócio
-        </HeadingMd>
-        <BodyMd>
-          O RD Station Marketing é um software para sua empresa fazer campanhas
-          melhores, nutrir Leads, gerar oportunidades comerciais qualificadas e
-          alcançar mais resultados.
-        </BodyMd>
-
-        <form className={styles.form} action="POST"></form>
-      </main>
+      <Main></Main>
 
       <section className={styles.rdMarketing}>
         <div className={styles.rdMarketingContainer}>
