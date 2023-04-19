@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Home.module.scss";
 import Navbar from "./components/Navbar/Navbar";
 import BodyMd from "./components/Typograph/BodyMd";
@@ -26,6 +28,8 @@ import youtubeIcon from "./images/icons/youtube.svg";
 import rdStationLogo from "./images/rd-station-cor-md.svg";
 import playIcon from "./images/icons/play.svg";
 import Image from "next/image";
+import { useState } from "react";
+import VideoModal from "./components/VideoModal/VideoModal";
 
 const icons = [
   {
@@ -91,6 +95,16 @@ const socialNetworkIcon = [
 ];
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={styles.grid}>
       <Navbar></Navbar>
@@ -175,14 +189,18 @@ export default function Home() {
         <div className={styles.imageContainer}>
           <div className={styles.triangle}></div>
         </div>
+
+        <div className={styles.resultsCut}></div>
       </section>
 
       <section className={styles.tool}>
-        <HeadingSm>
-          A ferramenta de Automação de Marketing líder na América Latina
-        </HeadingSm>
+        <div className={styles.tool}>
+          <HeadingSm>
+            A ferramenta de Automação de Marketing líder na América Latina
+          </HeadingSm>
 
-        <Carousel></Carousel>
+          <Carousel></Carousel>
+        </div>
       </section>
 
       <section className={styles.accountContainer}>
@@ -195,7 +213,7 @@ export default function Home() {
             importam com seus resultados e um ecossistema que apoia o seu
             negócio do planejamento à prática.
           </SubtitleSm>
-          <HighlightButton></HighlightButton>
+          <HighlightButton>criar conta gratuita</HighlightButton>
         </div>
       </section>
 
@@ -206,8 +224,14 @@ export default function Home() {
         <SecondaryButton>assista a demonstração</SecondaryButton>
 
         <div className={styles.videoContainer}>
-          <Image src={playIcon} className={styles.playIcon} />
+          <Image
+            onClick={handleClick}
+            src={playIcon}
+            className={styles.playIcon}
+            alt="Tocar vídeo"
+          />
         </div>
+        <VideoModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </section>
 
       <section className={styles.operation}>
@@ -223,23 +247,29 @@ export default function Home() {
           {icons.map((icon) => {
             return (
               <div className={styles.icon} key={icon.name}>
-                <Image src={icon.component}></Image>
+                <Image src={icon.component} alt={icon.name}></Image>
                 <BodyXs>{icon.name}</BodyXs>
               </div>
             );
           })}
         </div>
-        <PrimaryButton>Criar conta gratuita</PrimaryButton>
+        <a href="https://app.rdstation.com.br/signup" target="_blank">
+          <PrimaryButton>Criar conta gratuita</PrimaryButton>
+        </a>
       </section>
 
       <footer className={styles.rdFooter}>
-        <Image className={styles.logo} src={rdStationLogo}></Image>
+        <Image
+          className={styles.logo}
+          src={rdStationLogo}
+          alt="RD Station Logo"
+        ></Image>
         <hr className={styles.line}></hr>
         <div className={styles.iconContainer}>
           {socialNetworkIcon.map(({ icon, url }) => {
             return (
               <a href={url}>
-                <Image className={styles.icon} src={icon} key={url} />
+                <Image className={styles.icon} src={icon} key={url} alt="url" />
               </a>
             );
           })}

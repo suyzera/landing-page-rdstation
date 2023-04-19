@@ -46,7 +46,8 @@ const HamburgerMenu = () => {
         <li className={styles.buttonContainer}>
           <SecondaryButton>Button</SecondaryButton>
           <PrimaryButton>
-            Button <Image style={{ marginLeft: "5px" }} src={arrow} />
+            Button{" "}
+            <Image alt="arrow" style={{ marginLeft: "5px" }} src={arrow} />
           </PrimaryButton>
         </li>
       </ul>
