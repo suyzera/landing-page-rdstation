@@ -1,0 +1,47 @@
+.results {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f3f5;
+  gap: 8px;
+  .imageContainer {
+    position: relative;
+    background-image: url("./../../../images/img-rdoer.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 325px;
+    .triangle {
+      position: absolute;
+      top: -1px;
+      right: 0;
+      width: 65px;
+      height: 65px;
+      background-color: #f1f3f5;
+      transform: rotate(90deg);
+      -webkit-clip-path: polygon(50% 0, 100% 0, 0 100%);
+      clip-path: polygon(0% 0, 100% 0, 0 100%);
+    }
+  }
+
+  .list {
+    margin-top: 16px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .item {
+    margin: 0 0 10px 0;
+    padding: 0 0 0 40px;
+    background: url("./../../../images/icons/checkmark.svg") no-repeat left
+      center;
+  }
+
+  .check-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+}
