@@ -18,6 +18,9 @@
   border: none;
   border-radius: 10px;
   padding: 50px;
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .videoWrapper {
