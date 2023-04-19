@@ -4,12 +4,10 @@ import styles from "./Home.module.scss";
 import Navbar from "./components/Navbar/Navbar";
 import BodyMd from "./components/Typograph/BodyMd";
 import BodyXs from "./components/Typograph/BodyXs";
-import HeadingMd from "./components/Typograph/HeadingMd";
 import HeadingXs from "./components/Typograph/HeadingXs";
 import HeadingSm from "./components/Typograph/HeadingSm";
-
 import SubtitleSm from "./components/Typograph/SubtitleSm";
-import HighlightButton from "./components/Buttons/Highlight";
+
 import SecondaryButton from "./components/Buttons/Secondary";
 import PrimaryButton from "./components/Buttons/Primary";
 import rdStationCrmIcon from "./images/icons/rd-station-crm.svg";
@@ -34,6 +32,7 @@ import Main from "./Home/components/Main/Main";
 import MktSection from "./Home/components/MktSection/MktSection";
 import ResultsSection from "./Home/components/ResultsSection/ResultsSection";
 import ToolsSection from "./Home/components/ToolsSection/ToolsSection";
+import AccountContainer from "./Home/components/AccountContainer/AccountContainer";
 
 const icons = [
   {
@@ -116,21 +115,7 @@ export default function Home() {
       <MktSection></MktSection>
       <ResultsSection></ResultsSection>
       <ToolsSection></ToolsSection>
-
-      <section className={styles.accountContainer}>
-        <div className={styles.account}>
-          <HeadingSm color="#FFF">
-            Por que mais de 25.000 empresas escolheram o RD Station?
-          </HeadingSm>
-          <SubtitleSm color="#FFF">
-            Combinamos nossos produtos de Marketing e Vendas com pessoas que se
-            importam com seus resultados e um ecossistema que apoia o seu
-            negócio do planejamento à prática.
-          </SubtitleSm>
-          <HighlightButton>criar conta gratuita</HighlightButton>
-        </div>
-      </section>
-
+      <AccountContainer></AccountContainer>
       <section className={styles.rdVideo}>
         <HeadingXs>
           Entenda melhor como o RD Station Marketing funciona na prática
