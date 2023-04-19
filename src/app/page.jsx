@@ -6,8 +6,6 @@ import BodyMd from "./components/Typograph/BodyMd";
 import BodyXs from "./components/Typograph/BodyXs";
 import HeadingXs from "./components/Typograph/HeadingXs";
 import HeadingSm from "./components/Typograph/HeadingSm";
-import SubtitleSm from "./components/Typograph/SubtitleSm";
-
 import SecondaryButton from "./components/Buttons/Secondary";
 import PrimaryButton from "./components/Buttons/Primary";
 import rdStationCrmIcon from "./images/icons/rd-station-crm.svg";
@@ -24,15 +22,15 @@ import twitterIcon from "./images/icons/twitter.svg";
 import instagramIcon from "./images/icons/instagram.svg";
 import youtubeIcon from "./images/icons/youtube.svg";
 import rdStationLogo from "./images/rd-station-cor-md.svg";
-import playIcon from "./images/icons/play.svg";
+
 import Image from "next/image";
-import { useState } from "react";
-import VideoModal from "./components/VideoModal/VideoModal";
+
 import Main from "./Home/components/Main/Main";
 import MktSection from "./Home/components/MktSection/MktSection";
 import ResultsSection from "./Home/components/ResultsSection/ResultsSection";
 import ToolsSection from "./Home/components/ToolsSection/ToolsSection";
 import AccountContainer from "./Home/components/AccountContainer/AccountContainer";
+import VideoSection from "./Home/components/VideoSection/VideoSection";
 
 const icons = [
   {
@@ -98,16 +96,6 @@ const socialNetworkIcon = [
 ];
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <div className={styles.grid}>
       <Navbar></Navbar>
@@ -116,22 +104,7 @@ export default function Home() {
       <ResultsSection></ResultsSection>
       <ToolsSection></ToolsSection>
       <AccountContainer></AccountContainer>
-      <section className={styles.rdVideo}>
-        <HeadingXs>
-          Entenda melhor como o RD Station Marketing funciona na prática
-        </HeadingXs>
-        <SecondaryButton>assista a demonstração</SecondaryButton>
-
-        <div className={styles.videoContainer}>
-          <Image
-            onClick={handleClick}
-            src={playIcon}
-            className={styles.playIcon}
-            alt="Tocar vídeo"
-          />
-        </div>
-        <VideoModal isOpen={isModalOpen} onClose={handleCloseModal} />
-      </section>
+      <VideoSection></VideoSection>
 
       <section className={styles.operation}>
         <HeadingSm>
