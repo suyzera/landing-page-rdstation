@@ -7,7 +7,7 @@ import BodyXs from "./components/Typograph/BodyXs";
 import HeadingMd from "./components/Typograph/HeadingMd";
 import HeadingXs from "./components/Typograph/HeadingXs";
 import HeadingSm from "./components/Typograph/HeadingSm";
-import Carousel from "./components/Carousel/Carousel";
+
 import SubtitleSm from "./components/Typograph/SubtitleSm";
 import HighlightButton from "./components/Buttons/Highlight";
 import SecondaryButton from "./components/Buttons/Secondary";
@@ -33,6 +33,7 @@ import VideoModal from "./components/VideoModal/VideoModal";
 import Main from "./Home/components/Main/Main";
 import MktSection from "./Home/components/MktSection/MktSection";
 import ResultsSection from "./Home/components/ResultsSection/ResultsSection";
+import ToolsSection from "./Home/components/ToolsSection/ToolsSection";
 
 const icons = [
   {
@@ -114,16 +115,7 @@ export default function Home() {
       <Main></Main>
       <MktSection></MktSection>
       <ResultsSection></ResultsSection>
-
-      <section className={styles.tool}>
-        <div className={styles.tool}>
-          <HeadingSm>
-            A ferramenta de Automação de Marketing líder na América Latina
-          </HeadingSm>
-
-          <Carousel></Carousel>
-        </div>
-      </section>
+      <ToolsSection></ToolsSection>
 
       <section className={styles.accountContainer}>
         <div className={styles.account}>
