@@ -1,8 +1,75 @@
+import { useState } from "react";
 import styles from "./Main.module.scss";
 import BodyMd from "./../../../components/Typograph/BodyMd";
 import HeadingMd from "./../../../components/Typograph/HeadingMd";
+import LabelMd from "./../../../components/Typograph/LabelMd";
+import BodyXs from "@/app/components/Typograph/BodyXs";
 
 const Main = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [position, setPosition] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const [radioValue, setRadioValue] = useState("option1");
+  const [site, setSite] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      setPasswordError("Passwords must match");
+      return;
+    }
+
+    const response = await fetch(
+      "https://rdstation-signup-psel.herokuapp.com",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          position,
+          password,
+          site,
+        }),
+      }
+    );
+
+    if (response.ok) {
+      setShowPopup(true);
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+
+    const hasUppercase = /[A-Z]/.test(e.target.value);
+    const hasLowercase = /[a-z]/.test(e.target.value);
+    const hasNumber = /[0-9]/.test(e.target.value);
+
+    if (
+      e.target.value.length < 6 ||
+      e.target.value.length > 10 ||
+      !hasUppercase ||
+      !hasLowercase ||
+      !hasNumber
+    ) {
+      setPasswordError(
+        "Password must be 6-10 characters and contain at least one uppercase letter, one lowercase letter, and one number"
+      );
+    } else {
+      setPasswordError("");
+    }
+  };
+
   return (
     <main className={styles.main}>
       <HeadingMd>
@@ -15,7 +82,177 @@ const Main = () => {
         alcançar mais resultados.
       </BodyMd>
 
-      <form className={styles.form} action="POST"></form>
+      <div>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div>
+            <LabelMd htmlFor="name">Diga, qual seu nome?</LabelMd>
+            <input
+              className={styles.input}
+              type="text"
+              id="name"
+              value={name}
+              placeholder="Insira seu nome"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <LabelMd htmlFor="email">Seu email de trabalho</LabelMd>
+            <input
+              className={styles.input}
+              type="text"
+              id="email"
+              value={email}
+              placeholder="Insira seu e-mail"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <LabelMd htmlFor="phone">Seu telefone</LabelMd>
+            <input
+              className={styles.input}
+              type="text"
+              id="phone"
+              value={phone}
+              placeholder="Insira seu número de telefone com DDD"
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <LabelMd htmlFor="position">Seu cargo de ocupação</LabelMd>
+            <select
+              className={styles.select}
+              id="position"
+              value={position}
+              onChange={(e) => setPosition(e.target.value)}
+            >
+              <option value="">Select your position</option>
+              <option value="Sócio(a) / CEO / Proprietário(a)">
+                Sócio(a) / CEO / Proprietário(a)
+              </option>
+              <option value="Diretor(a) de Vendas">Diretor(a) de Vendas</option>
+              <option value="Diretor(a) de Marketing">
+                Diretor(a) de Marketing
+              </option>
+              <option value="Diretor(a) Outras Áreas">
+                Diretor(a) Outras Áreas
+              </option>
+              <option value="Gerente de Marketing">Gerente de Marketing</option>
+              <option value="Gerente de Vendas">Gerente de Vendas</option>
+              <option value="Coordenador(a)/Supervisor(a) de Marketing">
+                Coordenador(a)/Supervisor(a) de Marketing
+              </option>
+              <option value="Coordenador(a)/Supervisor(a) de Vendas">
+                Coordenador(a)/Supervisor(a) de Vendas
+              </option>
+              <option value="Analista/Assistente de Marketing">
+                Analista/Assistente de Marketing
+              </option>
+              <option value="Analista/Assistente de Vendas">
+                Analista/Assistente de Vendas
+              </option>
+              <option value="Vendedor(a) / Executivo(a) de Contas">
+                Vendedor(a) / Executivo(a) de Contas
+              </option>
+              <option value="Estudante">Estudante</option>
+              <option value="Outros Cargos">Outros Cargos</option>
+            </select>
+          </div>
+
+          <div>
+            <LabelMd htmlFor="password">Password:</LabelMd>
+            <input
+              className={styles.input}
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+            {passwordError && (
+              <div style={{ color: "red" }}>{passwordError}</div>
+            )}
+          </div>
+
+          <div>
+            <LabelMd htmlFor="confirm-password">Crie sua senha:</LabelMd>
+            <input
+              className={styles.input}
+              type="password"
+              id="confirm-password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            {password !== confirmPassword && (
+              <div style={{ color: "red" }}>Passwords must match</div>
+            )}
+          </div>
+
+          <LabelMd htmlFor="site">Qual o site da sua empresa?</LabelMd>
+          <label className={styles.label}>
+            <input
+              className={styles.inputRadio}
+              type="radio"
+              value="option1"
+              checked={radioValue === "option1"}
+              onChange={(e) => {
+                setSite("");
+                setRadioValue(e.target.value);
+              }}
+            />
+            Meu site é
+          </label>
+
+          {radioValue === "option1" && (
+            <input
+              className={styles.input}
+              placeholder="Insira o endereço do seu site"
+              id="site"
+              value={site}
+              type="text"
+              onChange={(e) => setSite(e.target.value)}
+            />
+          )}
+
+          <label className={styles.label}>
+            <input
+              className={styles.inputRadio}
+              type="radio"
+              value="Ainda não tenho site"
+              checked={radioValue === "Ainda não tenho site"}
+              onChange={(e) => {
+                setSite(e.target.value);
+                setRadioValue(e.target.value);
+              }}
+            />
+            Ainda não tenho site
+          </label>
+
+          <ul className={styles.ul}>
+            <li className={styles.li}>
+              Ao criar minha conta estou de acordo com os termos de uso do
+              software e política de privacidade.
+            </li>
+            <li className={styles.li}>
+              Ao preencher o formulário, concordo em receber comunicações de
+              acordo com meus interesses.
+            </li>
+            <li className={styles.li}>
+              *Você pode alterar suas permissões de comunicação a qualquer
+              tempo.
+            </li>
+          </ul>
+          <button onClick={() => setShowPopup(true)}>criar minha conta</button>
+        </form>
+
+        {showPopup && (
+          <div className={styles.alert}>
+            Thanks for submitting the form!
+            <button onClick={() => setShowPopup(false)}>Close</button>
+          </div>
+        )}
+      </div>
     </main>
   );
 };

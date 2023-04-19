@@ -39,8 +39,8 @@ const Footer = () => {
       <div className={styles.iconContainer}>
         {socialNetworkIcon.map(({ icon, url }) => {
           return (
-            <a href={url}>
-              <Image className={styles.icon} src={icon} key={url} alt="url" />
+            <a href={url} key={url}>
+              <Image className={styles.icon} src={icon} alt="url" />
             </a>
           );
         })}
