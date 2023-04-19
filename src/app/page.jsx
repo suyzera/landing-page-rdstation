@@ -31,6 +31,7 @@ import Image from "next/image";
 import { useState } from "react";
 import VideoModal from "./components/VideoModal/VideoModal";
 import Main from "./Home/components/Main/Main";
+import MktSection from "./Home/components/MktSection/MktSection";
 
 const icons = [
   {
@@ -110,24 +111,7 @@ export default function Home() {
     <div className={styles.grid}>
       <Navbar></Navbar>
       <Main></Main>
-
-      <section className={styles.rdMarketing}>
-        <div className={styles.rdMarketingContainer}>
-          <div className={styles.cut}></div>
-          <HeadingXs color="#FFF">
-            Estaremos juntos desde o primeiro passo!
-          </HeadingXs>
-          <BodyMd color="#FFF">
-            Se você ainda não sabe como extrair o máximo das ações digitais, não
-            tem problema. O RD Station Marketing é mais que uma ferramenta, nos
-            importamos com os seus resultados.
-          </BodyMd>
-          <BodyMd color="#FFF">
-            Estaremos com você do planejamento até a prática!
-          </BodyMd>
-        </div>
-      </section>
-
+      <MktSection></MktSection>
       <section className={styles.results}>
         <HeadingXs>
           Resultados previsíveis e mais clientes para sua empresa

@@ -3,29 +3,6 @@
   background: #fff;
 }
 
-.rdMarketing {
-  background-color: #0b485b;
-  padding-top: 8px;
-  .rdMarketingContainer {
-    position: relative;
-    padding: 40px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    .cut {
-      width: 0;
-      height: 0;
-      border-top: 24px solid transparent;
-      border-bottom: 24px solid transparent;
-      border-right: 24px solid #f1f3f5;
-      transform: rotate(45deg);
-      position: absolute;
-      left: -4px;
-      top: -25px;
-    }
-  }
-}
-
 .results {
   padding: 16px;
   display: flex;
