@@ -1,0 +1,22 @@
+.operation {
+  background-color: #f1f3f5;
+  padding: 40px 16px 80px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  .icons {
+    margin: 32px 0;
+    width: 330px;
+    display: grid;
+    grid-template: auto auto / auto auto;
+    row-gap: 40px;
+    .icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
