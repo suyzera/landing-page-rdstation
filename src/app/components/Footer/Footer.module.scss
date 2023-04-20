@@ -14,10 +14,43 @@
     width: 174px;
     height: 32px;
   }
-  .iconContainer {
+  .icons {
     display: flex;
     gap: 24px;
     .icon {
+    }
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  .rdFooter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "logo icons"
+      "line line"
+      "text text";
+    padding: 44px 108px;
+
+    gap: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #19c1ce;
+    .line {
+      grid-area: line;
+    }
+    .text {
+      grid-area: text;
+      justify-self: end;
+    }
+    .logo {
+      grid-area: logo;
+    }
+    .icons {
+      grid-area: icons;
+      justify-self: end;
     }
   }
 }

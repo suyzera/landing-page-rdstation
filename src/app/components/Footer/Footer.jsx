@@ -37,7 +37,8 @@ const Footer = () => {
         alt="RD Station Logo"
       ></Image>
       <hr className={styles.line}></hr>
-      <div className={styles.iconContainer}>
+
+      <div className={styles.icons}>
         {socialNetworkIcon.map(({ icon, url }) => {
           return (
             <a href={url} key={url}>
@@ -46,16 +47,19 @@ const Footer = () => {
           );
         })}
       </div>
-      <BodyXs>
-        © 2021 <strong>RD Station</strong>.{" "}
-        <LinkText
-          href="https://legal.rdstation.com/pt/privacy-policy/"
-          color="#000"
-        >
-          Política de privacidade
-        </LinkText>
-        .
-      </BodyXs>
+
+      <div className={styles.text}>
+        <BodyXs>
+          © 2021 <strong>RD Station</strong>.{" "}
+          <LinkText
+            href="https://legal.rdstation.com/pt/privacy-policy/"
+            color="#000"
+          >
+            Política de privacidade
+          </LinkText>
+          .
+        </BodyXs>
+      </div>
     </footer>
   );
 };
