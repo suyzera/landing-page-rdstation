@@ -358,7 +358,7 @@ const Main = () => {
             >
               criar minha conta
             </HighlightButton>
-            {!showPopup && (
+            {showPopup && (
               <BodyXs>Obrigado por fazer seu cadastro conosco!</BodyXs>
             )}
           </form>
