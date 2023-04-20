@@ -61,11 +61,15 @@ const OperationSection = () => {
 
   return (
     <section className={styles.operation}>
-      <HeadingSm>Torne sua operação de Marketing ainda mais poderosa</HeadingSm>
-      <BodyMd>
-        O RD Station Marketing se conecta as principais ferramentas nacionais e
-        internacionais
-      </BodyMd>
+      <div className={styles.titles}>
+        <HeadingSm>
+          Torne sua operação de Marketing ainda mais poderosa
+        </HeadingSm>
+        <BodyMd>
+          O RD Station Marketing se conecta as principais ferramentas nacionais
+          e internacionais
+        </BodyMd>
+      </div>
       <div className={styles.icons}>
         {icons.map((icon) => {
           return (
@@ -76,7 +80,12 @@ const OperationSection = () => {
           );
         })}
       </div>
-      <a href="https://app.rdstation.com.br/signup" target="_blank">
+
+      <a
+        className={styles.button}
+        href="https://app.rdstation.com.br/signup"
+        target="_blank"
+      >
         <PrimaryButton>Criar conta gratuita</PrimaryButton>
       </a>
     </section>
