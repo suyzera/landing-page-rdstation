@@ -18,7 +18,7 @@ const VideoModal = ({ isOpen, onClose }) => {
     >
       <div className={styles.videoWrapper}>
         <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          src="https://www.youtube.com/embed/lGCesaaLi4s?autoplay=1"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

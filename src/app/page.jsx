@@ -5,7 +5,6 @@ import Navbar from "@/app/components/Navbar/Navbar";
 import Footer from "@/app/components/Footer/Footer";
 
 import Main from "./Home/components/Main/Main";
-import MktSection from "./Home/components/MktSection/MktSection";
 import ResultsSection from "./Home/components/ResultsSection/ResultsSection";
 import ToolsSection from "./Home/components/ToolsSection/ToolsSection";
 import AccountContainer from "./Home/components/AccountContainer/AccountContainer";
@@ -17,9 +16,8 @@ export default function Home() {
     <div className={styles.grid}>
       <Navbar></Navbar>
       <Main></Main>
-      <MktSection></MktSection>
       <ResultsSection></ResultsSection>
-      <ToolsSection></ToolsSection>
+      {/* <ToolsSection></ToolsSection> */}
       <AccountContainer></AccountContainer>
       <VideoSection></VideoSection>
       <OperationSection></OperationSection>
