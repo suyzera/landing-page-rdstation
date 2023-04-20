@@ -56,6 +56,8 @@ const ResultsSection = () => {
       </div>
 
       <div className={styles.resultsCut}></div>
+      <div className={styles.backgroundCut}></div>
+      <div className={styles.backgroundCutSecondary}></div>
     </section>
   );
 };

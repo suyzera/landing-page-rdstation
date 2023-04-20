@@ -4,14 +4,44 @@
   grid-template: auto / auto;
   gap: 24px;
   background: #f1f3f5;
+  position: relative;
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    padding-bottom: 12px;
+    .firstTitleContainer {
+      padding: 0 60px 0 0;
+    }
+  }
+  .cut {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 160px;
+    height: 160px;
+    background: white;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 0%);
+  }
   .form {
     background-color: white;
-    padding: 24px;
+    padding: 40px 24px 40px 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     box-shadow: 0px 4px 12px rgba(33, 36, 41, 0.14);
     border-radius: 2px;
+    .formTitle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding-bottom: 32px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #cfd3d8;
+    }
     .input {
       width: 100%;
       margin-top: 8px;

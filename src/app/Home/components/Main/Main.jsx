@@ -3,11 +3,15 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import styles from "./Main.module.scss";
 import BodyMd from "@/app/components/Typograph/BodyMd";
 import HeadingMd from "@/app/components/Typograph/HeadingMd";
+import HeadingCustom from "@/app/components/Typograph/HeadingCustom";
 import LabelMd from "@/app/components/Typograph/LabelMd";
 import HighlightButton from "@/app/components/Buttons/Highlight";
 import BodyXs from "@/app/components/Typograph/BodyXs";
 import FormLabelMd from "@/app/components/Typograph/FormLabelMd";
 import LinkText from "@/app/components/Typograph/Link";
+import { Nunito_Sans } from "next/font/google";
+
+const nunito = Nunito_Sans({ subsets: ["latin"], weight: "400" });
 
 const Main = () => {
   const [name, setName] = useState("");
@@ -20,8 +24,6 @@ const Main = () => {
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(false);
-
   const [radioValue, setRadioValue] = useState("option1");
   const [site, setSite] = useState("");
 
@@ -108,19 +110,33 @@ const Main = () => {
 
   return (
     <main className={styles.main}>
-      <HeadingMd>
-        Gere mais <span style={{ color: "#19C1CE" }}>oportunidades</span> para
-        seu negócio
-      </HeadingMd>
-      <BodyMd>
-        O RD Station Marketing é um software para sua empresa fazer campanhas
-        melhores, nutrir Leads, gerar oportunidades comerciais qualificadas e
-        alcançar mais resultados.
-      </BodyMd>
+      <div className={styles.cut}></div>
+
+      <div className={styles.titleContainer}>
+        <div className={styles.firstTitleContainer}>
+          <HeadingMd>
+            Gere mais <span style={{ color: "#19C1CE" }}>oportunidades</span>{" "}
+            para seu negócio
+          </HeadingMd>
+        </div>
+        <BodyMd>
+          O RD Station Marketing é um software para sua empresa fazer campanhas
+          melhores, nutrir Leads, gerar oportunidades comerciais qualificadas e
+          alcançar mais resultados.
+        </BodyMd>
+      </div>
 
       <div>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div>
+            <div className={styles.formTitle}>
+              <HeadingCustom style={{ textAlign: "center" }}>
+                Comece seus 10 dias de teste grátis do RD Station Marketing!
+              </HeadingCustom>
+              <FormLabelMd>
+                Não precisa cadastrar cartão de crédito. 😉
+              </FormLabelMd>
+            </div>
             <LabelMd htmlFor="name">Diga, qual seu nome?</LabelMd>
             <input
               className={styles.input}
@@ -249,7 +265,7 @@ const Main = () => {
           </div>
 
           <LabelMd htmlFor="site">Qual o site da sua empresa?</LabelMd>
-          <label className={styles.label}>
+          <label className={`${styles.label} ${nunito.className}`}>
             <input
               className={styles.inputRadio}
               type="radio"
@@ -274,7 +290,7 @@ const Main = () => {
             />
           )}
 
-          <label className={styles.label}>
+          <label className={`${styles.label} ${nunito.className}`}>
             <input
               className={styles.inputRadio}
               type="radio"

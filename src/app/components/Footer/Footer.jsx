@@ -7,6 +7,7 @@ import linkedinIcon from "@/app/images/icons/linkedin.svg";
 import instagramIcon from "@/app/images/icons/instagram.svg";
 import youtubeIcon from "@/app/images/icons/youtube.svg";
 import BodyXs from "../Typograph/BodyXs";
+import LinkText from "../Typograph/Link";
 
 const socialNetworkIcon = [
   {
@@ -45,7 +46,16 @@ const Footer = () => {
           );
         })}
       </div>
-      <BodyXs>© 2021 RD Station. Política de Privacidade.</BodyXs>
+      <BodyXs>
+        © 2021 <strong>RD Station</strong>.{" "}
+        <LinkText
+          href="https://legal.rdstation.com/pt/privacy-policy/"
+          color="#000"
+        >
+          Política de privacidade
+        </LinkText>
+        .
+      </BodyXs>
     </footer>
   );
 };

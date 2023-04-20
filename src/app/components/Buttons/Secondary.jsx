@@ -3,9 +3,12 @@ import { Nunito_Sans } from "next/font/google";
 
 const nunito = Nunito_Sans({ subsets: ["latin"], weight: "700" });
 
-const SecondaryButton = ({ children = "button" }) => {
+const SecondaryButton = ({ children = "button", bgColor = "#FFF" }) => {
   return (
-    <button className={`${styles.secondary} ${nunito.className}`}>
+    <button
+      style={{ backgroundColor: bgColor }}
+      className={`${styles.secondary} ${nunito.className}`}
+    >
       {children}
     </button>
   );
