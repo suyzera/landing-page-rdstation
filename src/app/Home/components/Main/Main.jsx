@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import styles from "./Main.module.scss";
 import BodyMd from "@/app/components/Typograph/BodyMd";
 import HeadingMd from "@/app/components/Typograph/HeadingMd";
 import LabelMd from "@/app/components/Typograph/LabelMd";
 import HighlightButton from "@/app/components/Buttons/Highlight";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import BodyXs from "@/app/components/Typograph/BodyXs";
+import FormLabelMd from "@/app/components/Typograph/FormLabelMd";
+import LinkText from "@/app/components/Typograph/Link";
+
 const Main = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -287,16 +290,29 @@ const Main = () => {
 
           <ul className={styles.ul}>
             <li className={styles.li}>
-              Ao criar minha conta estou de acordo com os termos de uso do
-              software e política de privacidade.
+              <FormLabelMd>
+                Ao criar minha conta estou de acordo com os{" "}
+                <LinkText href="https://legal.rdstation.com/pt-BR/rdstation-services-agreement/">
+                  termos de uso
+                </LinkText>{" "}
+                do software e{" "}
+                <LinkText href="https://legal.rdstation.com/pt/privacy-policy/">
+                  política de privacidade
+                </LinkText>
+                .
+              </FormLabelMd>
             </li>
             <li className={styles.li}>
-              Ao preencher o formulário, concordo em receber comunicações de
-              acordo com meus interesses.
+              <FormLabelMd>
+                Ao preencher o formulário, concordo em receber comunicações de
+                acordo com meus interesses.
+              </FormLabelMd>
             </li>
             <li className={styles.li}>
-              *Você pode alterar suas permissões de comunicação a qualquer
-              tempo.
+              <FormLabelMd>
+                *Você pode alterar suas permissões de comunicação a qualquer
+                tempo.
+              </FormLabelMd>
             </li>
           </ul>
           <HighlightButton
