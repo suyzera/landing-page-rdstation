@@ -56,6 +56,13 @@ const Main = () => {
 
     if (response.ok) {
       setShowPopup(true);
+      setName("");
+      setEmail("");
+      setPhone("");
+      setPosition("");
+      setPassword("");
+      setConfirmPassword("");
+      setSite("");
     }
   };
 
@@ -351,15 +358,12 @@ const Main = () => {
             >
               criar minha conta
             </HighlightButton>
+            {!showPopup && (
+              <BodyXs>Obrigado por fazer seu cadastro conosco!</BodyXs>
+            )}
           </form>
-
-          {showPopup && (
-            <div className={styles.alert}>
-              Thanks for submitting the form!
-              <button onClick={() => setShowPopup(false)}>Close</button>
-            </div>
-          )}
         </div>
+
         <section className={styles.rdMarketing}>
           <div className={styles.rdMarketingContainer}>
             <div className={styles.cut}></div>
