@@ -7,15 +7,19 @@ const AccountContainer = () => {
   return (
     <section className={styles.accountContainer}>
       <div className={styles.account}>
-        <HeadingSm color="#FFF">
-          Por que mais de 25.000 empresas escolheram o RD Station?
-        </HeadingSm>
-        <SubtitleSm color="#FFF">
-          Combinamos nossos produtos de Marketing e Vendas com pessoas que se
-          importam com seus resultados e um ecossistema que apoia o seu negócio
-          do planejamento à prática.
-        </SubtitleSm>
-        <HighlightButton>criar conta gratuita</HighlightButton>
+        <div className={styles.text}>
+          <HeadingSm color="#FFF">
+            Por que mais de 25.000 empresas escolheram o RD Station?
+          </HeadingSm>
+          <SubtitleSm color="#FFF">
+            Combinamos nossos produtos de Marketing e Vendas com pessoas que se
+            importam com seus resultados e um ecossistema que apoia o seu
+            negócio do planejamento à prática.
+          </SubtitleSm>
+          <div className={styles.button}>
+            <HighlightButton>criar conta gratuita</HighlightButton>
+          </div>
+        </div>
       </div>
     </section>
   );
