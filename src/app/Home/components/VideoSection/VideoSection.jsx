@@ -19,10 +19,15 @@ const VideoSection = () => {
 
   return (
     <section className={styles.rdVideo}>
-      <HeadingXs>
-        Entenda melhor como o RD Station Marketing funciona na prática
-      </HeadingXs>
-      <SecondaryButton>assista a demonstração</SecondaryButton>
+      <div className={styles.topCut}></div>
+      <div className={styles.titles}>
+        <HeadingXs>
+          Entenda melhor como o RD Station Marketing funciona na prática
+        </HeadingXs>
+        <div style={{ maxWidth: "270px", textAlign: "center" }}>
+          <SecondaryButton>assista a demonstração</SecondaryButton>
+        </div>
+      </div>
 
       <div className={styles.videoContainer}>
         <Image
@@ -32,6 +37,8 @@ const VideoSection = () => {
           alt="Tocar vídeo"
         />
       </div>
+
+      <div className={styles.cut}></div>
       <VideoModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </section>
   );

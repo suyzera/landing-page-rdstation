@@ -1,14 +1,25 @@
 .rdVideo {
   background-color: #f1f3f5;
-  padding: 40px 16px 12px 16px;
+  padding: 40px 16px 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 16px;
+  position: relative;
+  .topCut {
+    display: none;
+  }
+  .titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
   .videoContainer {
     margin-top: 16px;
     width: 100%;
+    max-width: 650px;
     aspect-ratio: 2 / 1;
     background-image: url("../../../images/video-modal.png");
     background-repeat: no-repeat;
@@ -18,9 +29,70 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 3;
     .playIcon {
       min-width: 80px;
       min-height: 80px;
+    }
+  }
+  .cut {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .rdVideo {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-areas: "titles video";
+    background-color: #f1f3f5;
+    padding: 0 108px 0 108px;
+    position: relative;
+    .topCut {
+      display: block;
+      background-color: white;
+      position: absolute;
+      top: 0px;
+      height: 55px;
+      width: 100%;
+      z-index: 2;
+    }
+    .titles {
+      grid-area: titles;
+      align-items: flex-start;
+    }
+    .videoContainer {
+      grid-area: video;
+      margin-top: 16px;
+      width: 100%;
+      max-width: 650px;
+      aspect-ratio: 2 / 1;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+      .playIcon {
+        min-width: 80px;
+        min-height: 80px;
+      }
+    }
+    .cut {
+      grid-area: cut;
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      height: 40px;
+      width: 100%;
+      z-index: 2;
     }
   }
 }
