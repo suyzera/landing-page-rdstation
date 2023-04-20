@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styles from "./Main.module.scss";
-import BodyMd from "./../../../components/Typograph/BodyMd";
-import HeadingMd from "./../../../components/Typograph/HeadingMd";
-import LabelMd from "./../../../components/Typograph/LabelMd";
+import BodyMd from "@/app/components/Typograph/BodyMd";
+import HeadingMd from "@/app/components/Typograph/HeadingMd";
+import LabelMd from "@/app/components/Typograph/LabelMd";
+import HighlightButton from "@/app/components/Buttons/Highlight";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import BodyXs from "@/app/components/Typograph/BodyXs";
-
 const Main = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,6 +15,9 @@ const Main = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const [radioValue, setRadioValue] = useState("option1");
   const [site, setSite] = useState("");
@@ -36,6 +40,7 @@ const Main = () => {
         body: JSON.stringify({
           name,
           email,
+          phone,
           position,
           password,
           site,
@@ -46,6 +51,26 @@ const Main = () => {
     if (response.ok) {
       setShowPopup(true);
     }
+  };
+
+  const handleTelephoneChange = (event) => {
+    let value = event.target.value;
+    value = value.replace(/\D/g, "");
+    const mask = value.length > 11 ? "(99) 99999-9999" : "(99) 9999-9999";
+    let i = 0;
+    let newValue = "";
+    for (const c of mask) {
+      if (c === "9") {
+        if (i < value.length) {
+          newValue += value[i++];
+        } else {
+          break;
+        }
+      } else {
+        newValue += c;
+      }
+    }
+    setPhone(newValue);
   };
 
   const handlePasswordChange = (e) => {
@@ -63,11 +88,19 @@ const Main = () => {
       !hasNumber
     ) {
       setPasswordError(
-        "Password must be 6-10 characters and contain at least one uppercase letter, one lowercase letter, and one number"
+        "A senha deve ter de 6 a 10 caracteres e conter pelo menos uma letra maiúscula, uma letra minúscula e um número"
       );
     } else {
       setPasswordError("");
     }
+  };
+
+  const handleShowPasswordClick = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleShowPasswordConfirmClick = () => {
+    setShowPasswordConfirm(!showPasswordConfirm);
   };
 
   return (
@@ -116,7 +149,8 @@ const Main = () => {
               id="phone"
               value={phone}
               placeholder="Insira seu número de telefone com DDD"
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={handleTelephoneChange}
+              maxLength="15"
             />
           </div>
 
@@ -161,31 +195,53 @@ const Main = () => {
             </select>
           </div>
 
-          <div>
+          <div style={{ position: "relative" }}>
             <LabelMd htmlFor="password">Password:</LabelMd>
             <input
               className={styles.input}
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="password"
               value={password}
               onChange={handlePasswordChange}
             />
-            {passwordError && (
-              <div style={{ color: "red" }}>{passwordError}</div>
+            {showPassword ? (
+              <FaEye
+                className={styles.iconPassword}
+                onClick={handleShowPasswordClick}
+              />
+            ) : (
+              <FaEyeSlash
+                className={styles.iconPassword}
+                onClick={handleShowPasswordClick}
+              />
             )}
+            {passwordError && <BodyXs color="red">{passwordError}</BodyXs>}
           </div>
 
-          <div>
+          <div style={{ position: "relative" }}>
             <LabelMd htmlFor="confirm-password">Crie sua senha:</LabelMd>
             <input
               className={styles.input}
-              type="password"
+              type={showPasswordConfirm ? "text" : "password"}
               id="confirm-password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
+
+            {showPasswordConfirm ? (
+              <FaEye
+                className={styles.iconPassword}
+                onClick={handleShowPasswordConfirmClick}
+              />
+            ) : (
+              <FaEyeSlash
+                className={styles.iconPassword}
+                onClick={handleShowPasswordConfirmClick}
+              />
+            )}
+
             {password !== confirmPassword && (
-              <div style={{ color: "red" }}>Passwords must match</div>
+              <BodyXs color="red">As senhas devem ser iguais</BodyXs>
             )}
           </div>
 
@@ -243,7 +299,20 @@ const Main = () => {
               tempo.
             </li>
           </ul>
-          <button onClick={() => setShowPopup(true)}>criar minha conta</button>
+          <HighlightButton
+            disabled={
+              !name ||
+              !email ||
+              !phone ||
+              !position ||
+              !site ||
+              !password ||
+              !confirmPassword
+            }
+            type="submit"
+          >
+            criar minha conta
+          </HighlightButton>
         </form>
 
         {showPopup && (
