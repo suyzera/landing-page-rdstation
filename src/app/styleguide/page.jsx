@@ -1,85 +1,133 @@
+import Image from "next/image";
 import styles from "./StyleGuide.module.scss";
-import ColorSquare from "../components/ColorSquare/ColorSquare";
-import colors from "./variables/colors";
-import tableInfo from "./tableInfo";
-import HeadingLg from "../components/Typograph/HeadingLg";
-import { Darker_Grotesque, Nunito_Sans } from "next/font/google";
-import BodyMd from "../components/Typograph/BodyMd";
-import HeadingXs from "../components/Typograph/HeadingXs";
-
-const nunito = Nunito_Sans({ subsets: ["latin"], weight: "400" });
-const darker = Darker_Grotesque({ subsets: ["latin"], weight: "900" });
+import { Roboto_Mono, Poppins } from "next/font/google";
+import Logo1 from "@/app/images/icons/icon.svg";
+import Logo2 from "@/app/images/icons/icon-1.svg";
+import Logo3 from "@/app/images/icons/icon-2.svg";
+const poppinsBolder = Poppins({ subsets: ["latin"], weight: "700" });
+const robotoBolder = Roboto_Mono({ subsets: ["latin"], weight: "700" });
+const robotoLighter = Roboto_Mono({ subsets: ["latin"], weight: "400" });
 
 const StyleGuide = () => {
   return (
-    <div className={styles.grid}>
-      <section className={styles.styleguide}>
-        <h1 className={darker.className}>Style Guide</h1>
-      </section>
+    <div className={`${styles.grid} ${robotoBolder.className} `}>
+      <nav>
+        <ul className={styles.navigationGrid}>
+          <li>
+            <span
+              className={`${styles.floatingNumber} ${robotoLighter.className} `}
+            >
+              01
+            </span>
+            <a href="#" className={robotoBolder.className}>
+              // Home
+            </a>
+          </li>
+          <li>
+            <span
+              className={`${styles.floatingNumber} ${robotoLighter.className} `}
+            >
+              02
+            </span>
+            <a href="#" className={robotoBolder.className}>
+              // Expertise
+            </a>
+          </li>
+          <li>
+            <span
+              className={`${styles.floatingNumber} ${robotoLighter.className} `}
+            >
+              03
+            </span>
+            <a href="#" className={robotoBolder.className}>
+              // Work
+            </a>
+          </li>
+          <li>
+            <span
+              className={`${styles.floatingNumber} ${robotoLighter.className} `}
+            >
+              04
+            </span>
+            <a href="#" className={robotoBolder.className}>
+              // Experience
+            </a>
+          </li>
+          <li>
+            <span
+              className={`${styles.floatingNumber} ${robotoLighter.className} `}
+            >
+              05
+            </span>
+            <a href="#" className={robotoBolder.className}>
+              // Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-      <section className={styles.colors}>
-        <HeadingLg>Colors</HeadingLg>
-        <div className={styles.color}>
-          {colors.map((color) => (
-            <ColorSquare color={color} key={color.value} />
-          ))}
-        </div>
-      </section>
+      <main className={styles.mainGrid}>
+        <h2 className={`${styles.title} ${poppinsBolder.className} `}>
+          Arthur Ussuy
+        </h2>
+        <h1 className={`${styles.subtitle} ${robotoBolder.className} `}>
+          Software Enginner, front end & app developer
+        </h1>
 
-      <section className={styles.typograph}>
-        <HeadingLg>Tipografia</HeadingLg>
+        <span className={styles.scrollBtn}>
+          <a href="#">
+            <span className={styles.mouse}>
+              <span></span>
+            </span>
+          </a>
+          <p>scroll me</p>
+        </span>
+      </main>
 
-        <div className={styles.fonts}>
-          <div className={styles.square}>
-            <h3 className={nunito.className}>Nunito Sams</h3>
-            <BodyMd>Google Fonts</BodyMd>
+      <aside className={styles.expertise}>
+        <h2 className={poppinsBolder.className}>Expertise</h2>
+        <div className={styles.expertiseContainer}>
+          <div className={styles.development}>
+            <Image src={Logo1} />
+            <h3>Software Development</h3>
+            <p>
+              Experienced in both functional and OOP: Dart, Python, Java,
+              JavaScript, TypeScript.
+            </p>
+            <div className={styles.lineTitle}>
+              <span>H3</span>
+              <div></div>
+              <span>H3</span>
+            </div>
           </div>
-          <div className={styles.square}>
-            <h3 className={nunito.className}>Darker Grotesque</h3>
-            <BodyMd>Google Fonts</BodyMd>
+          <div className={styles.frontend}>
+            <Image src={Logo2} />
+            <h3>Frontend Dev React, NextJS</h3>
+            <p>
+              Passionate about UI/UX. Over 4 years of development experience in
+              HTML, CSS, JS, React and NextJS frameworks.
+            </p>
+            <div className={styles.lineTitle}>
+              <span>H3</span>
+              <div></div>
+              <span>H3</span>
+            </div>
+          </div>
+          <div className={styles.flutter}>
+            <Image src={Logo3} />
+            <h3>Flutter Dev, Android, IOS</h3>
+            <p>
+              Skilled in developing hybrid mobile apps and cross-platform
+              solutions using the Flutter framework.
+            </p>
+            <div className={styles.lineTitle}>
+              <span>H3</span>
+              <div />
+              <span>H3</span>
+            </div>
           </div>
         </div>
-
-        <table className={styles.table}>
-          <thead className={styles.thead}>
-            <tr>
-              <th className={styles.th}>
-                <HeadingXs>Name</HeadingXs>
-              </th>
-              <th className={styles.th}>
-                <HeadingXs>Family</HeadingXs>
-              </th>
-              <th className={styles.th}>
-                <HeadingXs>Size Desktop</HeadingXs>{" "}
-              </th>
-              <th className={styles.th}>
-                <HeadingXs>Size Mobile</HeadingXs>{" "}
-              </th>
-              <th className={styles.th}>
-                <HeadingXs>Line Height</HeadingXs>{" "}
-              </th>
-              <th className={styles.th}>
-                <HeadingXs>Weight</HeadingXs>
-              </th>
-            </tr>
-          </thead>
-
-          <tbody className={styles.tbody}>
-            {tableInfo.map((item) => {
-              return (
-                <tr className={styles.tr} key={item.title}>
-                  <td className={styles.td}>{item.title}</td>
-                  <td className={styles.td}>{item.family}</td>
-                  <td className={styles.td}>{item.desktopSize}</td>
-                  <td className={styles.td}>{item.mobileSize}</td>
-                  <td className={styles.td}>{item.lineHeight}</td>
-                  <td className={styles.td}>{item.weight}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </section>
+      </aside>
     </div>
   );
 };
